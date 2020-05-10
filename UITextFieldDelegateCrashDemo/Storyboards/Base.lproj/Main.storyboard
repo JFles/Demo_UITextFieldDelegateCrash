@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EU9-oA-YGw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="EQt-cl-SFA">
+            <objects>
+                <tableViewController id="vza-1O-5Ql" customClass="RootTableViewController" customModule="UITextFieldDelegateCrashDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZFH-6T-Mfw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rootCell" id="f5N-Cr-Uvf" customClass="RootVCTableViewCell" customModule="UITextFieldDelegateCrashDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5N-Cr-Uvf" id="EH8-G9-qoV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="m4n-Pt-XI6" kind="show" id="4IE-lE-26K"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vza-1O-5Ql" id="NhN-KN-Lp0"/>
+                            <outlet property="delegate" destination="vza-1O-5Ql" id="EKB-um-xYn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="3Cz-hJ-pYt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCn-bZ-vN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123" y="-55"/>
+        </scene>
+        <!--Child Table View Controller-->
+        <scene sceneID="knc-1n-XGC">
+            <objects>
+                <tableViewController id="m4n-Pt-XI6" customClass="ChildTableViewController" customModule="UITextFieldDelegateCrashDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XFD-M4-ICT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="childCell" id="6TB-9x-sXH" customClass="ChildVCTableViewCell" customModule="UITextFieldDelegateCrashDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6TB-9x-sXH" id="dzT-BL-T4g">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Leave this blank, then hit the back button" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-oF-5QH">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dYf-oF-5QH" firstAttribute="top" secondItem="dzT-BL-T4g" secondAttribute="top" id="04T-Om-r7j"/>
+                                        <constraint firstAttribute="bottom" secondItem="dYf-oF-5QH" secondAttribute="bottom" id="BDO-T3-8AR"/>
+                                        <constraint firstAttribute="trailing" secondItem="dYf-oF-5QH" secondAttribute="trailing" constant="20" id="XpV-vN-Esg"/>
+                                        <constraint firstItem="dYf-oF-5QH" firstAttribute="leading" secondItem="dzT-BL-T4g" secondAttribute="leading" constant="20" id="cTx-v9-NUY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="childVCTextField" destination="dYf-oF-5QH" id="cXf-VW-Hc6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m4n-Pt-XI6" id="QIH-Es-xFC"/>
+                            <outlet property="delegate" destination="m4n-Pt-XI6" id="0RI-eI-J9i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="kV7-AD-LsH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YiM-yJ-PUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-56"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GI0-6m-2kg">
+            <objects>
+                <navigationController id="EU9-oA-YGw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q01-S6-yYg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vza-1O-5Ql" kind="relationship" relationship="rootViewController" id="nQg-Tc-WAh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GVJ-QC-5AI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1043" y="-55"/>
+        </scene>
+    </scenes>
+</document>
